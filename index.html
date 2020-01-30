@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <title>Weatherwear</title>
 </head>
 <body>
-    
+    <h1>Weatherwear</h1>
+
+    <form id="zipForm" autocomplete="on">
+        <!-- TODO: CSS - Remove input number arrows -->
+        <label for="zipCode">Enter Zip Code:</label>
+        <br>
+        <input type="number" name="zipCode" id="zipCode" placeholder="00000" maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+        <button type="submit">Submit</button>
+    </form>
+
+    <p>Current Temperature: <span id="temp">--</span>&deg;</p>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

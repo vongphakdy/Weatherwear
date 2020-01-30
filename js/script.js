@@ -1,27 +1,30 @@
-const fetch = require("node-fetch");
+// const fetch = require("node-fetch");
+const zipForm = document.getElementById('zipForm');
 
-let apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=London';
-let apiKey = '&appid=65c2a04c4c37cb19ae57a213f9dce232';
+zipForm.addEventListener('submit', (e) => {
+    // TODO:    close form window > display main page
+    //          form validation
+    //          update fetch.catch
+    //          update Temperature on HTML with innerHTML or innerText or someting
+    e.preventDefault();
+    apiCall();
+})
 
+function apiCall() {
+    const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?';
+    const apiKey = '&appid=65c2a04c4c37cb19ae57a213f9dce232';
+    let zipCode = 'zip=' + document.getElementById('zipCode').value; 
+    let currTemp = document.getElementById('temp');
+    // console.log(apiUrl + zipCode + apiKey);
 
-fetch(apiUrl + apiKey)
-    .then(response => response.json())
-    .then(data => {
-        const condition = data.weather[0].main;
-        if (condition == "Thunderstorm") {
-            console.log("Heavy coat + umbrella");
-        } else if (condition == "Drizzle" || condition == "Rain") {
-            console.log("Sweater + umbrella");
-        } else if (condition == "Snow") {
-            console.log("Snow coat");
-        } else if (condition == "Smoke" || condition == "Dust" || condition == "Sand" || condition == "Ash") {
-            console.log("Face mask");
-        } else if (condition == "Clear") {
-            console.log("T shirt");
-        } else if (condition == "Clouds") {
-            console.log("Long sleeve");
-        } else {
-            console.log("Figure dis out");
-        }
-    })
-    .catch(err => console.log(err));
+    fetch(apiUrl + zipCode + apiKey)
+        .then(response => response.json())
+        .then(data => {
+            let tempK = (data.main.temp).toFixed(0);
+            let tempC = (tempK - 273.15).toFixed(0);
+            let tempF = (((tempK - 273.15) * 1.8) + 32).toFixed(0);
+
+            currTemp.innerHTML = tempF;
+        })
+        .catch(err => console.log(err));
+}
