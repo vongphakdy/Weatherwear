@@ -4,8 +4,7 @@ const zipForm = document.getElementById('zipForm');
 zipForm.addEventListener('submit', (e) => {
     // TODO:    close form window > display main page
     //          form validation
-    //          update fetch.catch
-    //          update Temperature on HTML with innerHTML or innerText or someting
+    //          update fetch.catch to display err on screen !console.log
     e.preventDefault();
     apiCall();
 })
@@ -18,7 +17,13 @@ function apiCall() {
     // console.log(apiUrl + zipCode + apiKey);
 
     fetch(apiUrl + zipCode + apiKey)
-        .then(response => response.json())
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+              } else {
+                throw new Error('Something went wrong');
+              }
+        })
         .then(data => {
             let tempK = (data.main.temp).toFixed(0);
             let tempC = (tempK - 273.15).toFixed(0);

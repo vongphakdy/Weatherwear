@@ -1,0 +1,121 @@
+@import url("https://use.typekit.net/dzk5lsk.css");
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'interstate', sans-serif;
+  font-weight: 500;
+  color: #363636;
+}
+
+a {
+  text-decoration: none;
+  color: #363636;
+}
+
+a:active, a:hover {
+  color: #004CD3;
+}
+
+.wrapper-lg {
+  width: calc(100%-60px);
+  margin: 0 30px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+}
+
+.header .logo {
+  width: 62px;
+}
+
+.header nav a {
+  margin: 0 20px;
+}
+
+.header .settings .settings-zip {
+  font-weight: 700;
+}
+
+.header .settings .fas {
+  margin-left: 10px;
+  color: #B2B2B2;
+}
+
+.header .settings:hover {
+  cursor: pointer;
+}
+
+.header .settings:hover .settings-zip {
+  color: #004CD3;
+}
+
+.header .settings:hover .fas {
+  color: #363636;
+}
+
+.main-wrapper {
+  width: calc(100% - 30px);
+  height: 100vh;
+  overflow: auto;
+  margin: 0 0 0 30px;
+  padding: 60px 30px 60px 60px;
+  background: #e8eaee;
+  border-radius: 64px 0 0 64px;
+}
+
+.main-wrapper h1 {
+  margin-bottom: 28px;
+}
+
+.main-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2.5fr;
+      grid-template-columns: 1fr 2.5fr;
+      grid-template-areas: "weather wear";
+}
+
+.weather-widget {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: weather;
+  height: 400px;
+  min-width: 230px;
+  padding: 40px 30px;
+  background: white;
+  border-radius: 30px;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.weather-widget .weather-temp {
+  font-size: 80px;
+  color: #004CD3;
+}
+
+.weather-widget .line {
+  border-top: 2px solid #e8eaee;
+  width: 100%;
+}
+
+#id {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: wear;
+}
+/*# sourceMappingURL=style.css.map */

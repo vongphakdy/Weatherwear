@@ -4,22 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/style.css">
     <title>Weatherwear</title>
 </head>
 <body>
-    <h1>Weatherwear</h1>
 
-    <form id="zipForm" autocomplete="on">
-        <!-- TODO: CSS - Remove input number arrows -->
-        <label for="zipCode">Enter Zip Code:</label>
-        <br>
-        <input type="number" name="zipCode" id="zipCode" placeholder="00000" maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-        <button type="submit">Submit</button>
-    </form>
+    <div class="header wrapper-lg">
+        <img src="img/logo.png" alt="Weatherwear logo" class="logo">
+        <nav>
+            <a href="/index.html">Dashboard</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="settings">
+            <p class="settings-zip" id="zip-header">00000<i class="fas fa-sliders-h" alt="Settings"></i></p>
+        </div>
+    </div>
 
-    <p>Current Temperature: <span id="temp">--</span>&deg;</p>
+    <main>
+        <div class="main-wrapper">
+            <h1>Today</h1>
+                <div class="main-grid">
+                <div class="weather-widget">
+                    <p class="weather-temp"><span id="temp">--</span>&deg;</p>
+                    <div class="line"></div>
+                </div>
+                <form id="zipForm" autocomplete="on">
+                    <!-- TODO: CSS - Remove input number arrows -->
+                    <label for="zipCode">Enter Zip Code:</label>
+                    <br>
+                    <input required type="number" name="zipCode" id="zipCode" placeholder="00000" maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
 
     <script src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/034914a6e9.js" crossorigin="anonymous"></script>
 </body>
 </html>
