@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
+    <!-- icon -->
     <title>Weatherwear</title>
 </head>
 <body>
@@ -16,26 +17,30 @@
             <a href="#">FAQ</a>
             <a href="#">Contact</a>
         </nav>
-        <div class="settings">
-            <p class="settings-zip" id="zip-header">00000<i class="fas fa-sliders-h" alt="Settings"></i></p>
+        <form id="zipForm" autocomplete="on">
+            <!-- TODO: CSS - Remove input number arrows -->
+            <label for="zipCode">Enter Zip Code:</label> <br>
+            <input required type="number" name="zipCode" id="zipCode" placeholder="00000" maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+            <button type="submit">Submit</button>
+        </form>
+        <div class="config">
+            <p class="zip-head" id="zip-head">00000<i class="fas fa-sliders-h" alt="Configure Settings"></i></p>
         </div>
     </div>
 
-    <main>
-        <div class="main-wrapper">
-            <h1>Today</h1>
-                <div class="main-grid">
-                <div class="weather-widget">
-                    <p class="weather-temp"><span id="temp">--</span>&deg;</p>
-                    <div class="line"></div>
+    <main class="main-wrapper">
+        <h2>Today</h2>
+        <div class="main-content">
+            <div class="weather">
+                <p class="weather-temp"><span id="temp">--</span>&deg;</p>
+                <div class="line"></div>
+            </div>
+            <div class="wear">
+                <img src="img/wear-clear.png" alt="" id="wear-img" class="wear-img">
+                <div class="wear-blurb">
+                    <h1>Suns Out. Guns out.</h1>
+                    <p>Clear skies today. Throw on your favorite T-shirt and seize the day.</p>
                 </div>
-                <form id="zipForm" autocomplete="on">
-                    <!-- TODO: CSS - Remove input number arrows -->
-                    <label for="zipCode">Enter Zip Code:</label>
-                    <br>
-                    <input required type="number" name="zipCode" id="zipCode" placeholder="00000" maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-                    <button type="submit">Submit</button>
-                </form>
             </div>
         </div>
     </main>

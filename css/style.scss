@@ -2,8 +2,9 @@
 // 400,500,700
 $black: #363636;
 $blue: #004CD3;
-$gray: #B2B2B2;
-$lightGray: rgb(232, 234, 238);
+$gray: rgb(161, 161, 161);
+$grayD: rgb(99, 99, 99);
+$grayL: rgb(232, 234, 238);
 
 *, *::after, *::before {
     margin: 0; padding: 0; box-sizing: border-box;
@@ -11,7 +12,17 @@ $lightGray: rgb(232, 234, 238);
 body {
     font-family: 'interstate', sans-serif;
     font-weight: 500;
+    font-size: 14px;
     color: $black;
+}
+h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+p {
+    color: $grayD;
+    line-height: 1.5;
+    font-weight: 400;
 }
 a {
     text-decoration: none;
@@ -20,75 +31,150 @@ a {
         color: $blue;
     }
 }
-.wrapper-lg {
-    width: calc(100%-60px);
-    margin: 0 30px;
-}
 
+.wrapper-lg {
+    width: calc(100%-30px);
+    margin: 0 15px;
+}
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
-    .logo {
-        width: 62px;
-    }
-    nav a {
-        margin: 0 20px;
-    }
-    .settings {
-        .settings-zip {
-            font-weight: 700;
-        }
-        .fas {
-            margin-left: 10px;
-            color: $gray;
-        }
-        &:hover {
-            cursor: pointer;
-            .settings-zip{color:$blue;}
-            .fas{color:$black;}
-        }
-    }
+    padding: 15px 0;
+    .logo {width: 52px;}
+    nav {display: none;}
+    .config {display: none;}
+    form {display: none;}
 }
 
 .main-wrapper {
-    width: calc(100% - 30px);
+    width: calc(100% - 15px);
     height: 100vh;
+    margin: 0 0 35px 15px;
+    padding: 25px 20px;
     overflow: auto;
-    margin: 0 0 0 30px;
-    padding: 60px 30px 60px 60px;
-    background: $lightGray;
-    border-radius: 64px 0 0 64px;
-    h1 {
-        margin-bottom: 28px;
-    }
+    background: $grayL;
+    border-radius: 32px 0 0 32px;
+    > h2 {margin-bottom: 16px;}
 }
-.main-grid {
-    display: grid;
-    grid-template-columns: 1fr 2.5fr;
-    grid-template-areas:
-    "weather wear";
-}
-.weather-widget {
-    grid-area: weather;
-    height: 400px;
-    // width: 100%;
-    min-width: 230px;
-    padding: 40px 30px;
-    background: white;
-    border-radius: 30px;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
-    .weather-temp {
-        font-size: 80px;
-        color: $blue;
+.main-content {
+    display: flex;
+    flex-direction: column-reverse;
+    .wear {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 32px;
+        .wear-img {
+            width: 75%;
+            margin: 0 auto 16px auto;
+        }
     }
-    .line{
-        border-top: 2px solid $lightGray;
-        width: 100%;
+    .weather {
+        padding: 15px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+        .weather-temp {
+            font-size: 64px;
+            color: $blue;
+        }
     }
 }
 
-#id {
-    grid-area: wear;
-}
+
+
+
+
+
+
+
+// .wrapper-lg {
+//     width: calc(100%-60px);
+//     margin: 0 30px;
+// }
+
+// .header {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 20px 0;
+//     .logo {
+//         width: 62px;
+//     }
+//     nav a {
+//         margin: 0 20px;
+//     }
+//     .config {
+//         .zip-head {
+//             font-weight: 700;
+//         }
+//         .fas {
+//             margin-left: 10px;
+//             color: $gray;
+//         }
+//         &:hover {
+//             cursor: pointer;
+//             .fas{color:$black;}
+//         }
+//     }
+// }
+
+// .main-wrapper {
+//     width: calc(100% - 30px);
+//     height: 100vh;
+//     overflow: auto;
+//     margin: 0 0 0 30px;
+//     padding: 60px 30px 60px 60px;
+//     background: $grayL;
+//     border-radius: 64px 0 0 64px;
+//     > h1 {
+//         margin-bottom: 28px;
+//     }
+// }
+// .main-content {
+//     width: 100%;
+//     display: grid;
+//     grid-template-columns: 1fr auto;
+//     // grid-template-rows: 50% 50%;
+//     grid-template-areas:
+//     "weather wearImg"
+//     "wear wearImg";
+//     grid-gap: 30px;
+// }
+// .weather {
+//     grid-area: weather;
+//     // height: 400px;
+//     width: 400px;
+//     min-width: 230px;
+//     padding: 40px 30px;
+//     background: white;
+//     border-radius: 30px;
+//     box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+//     .weather-temp {
+//         font-size: 80px;
+//         color: $blue;
+//     }
+//     .line{
+//         border-top: 2px solid $grayL;
+//         width: 100%;
+//     }
+// }
+// // .wear {
+// //     grid-area: wear;
+// //     // display: flex;
+// //     background: $gray;
+// //     position: relative;
+// //     .wear-img {
+// //         width: 300px;
+// //         position: absolute;
+// //         right: 0;
+// //         top: 0;
+// //     }
+// // }
+// .wear-blurb {
+//     grid-area: wear;
+// }
+// .wear-img {
+//     grid-area: wearImg;
+//     height: 400px;
+// }
