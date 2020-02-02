@@ -63,10 +63,6 @@ a:active, a:hover {
   display: none;
 }
 
-.header form {
-  display: none;
-}
-
 .main-wrapper {
   width: calc(100% - 15px);
   height: 100vh;
@@ -103,7 +99,7 @@ a:active, a:hover {
 }
 
 .main-content .wear .wear-img {
-  width: 75%;
+  width: 25%;
   margin: 0 auto 16px auto;
 }
 
