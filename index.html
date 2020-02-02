@@ -19,9 +19,9 @@
         </nav>
         <form id="zipForm" autocomplete="on">
             <!-- TODO: CSS - Remove input number arrows -->
-            <label for="zipCode">Enter Zip Code:</label> <br>
+            <!-- <label for="zipCode">Enter Zip Code:</label> <br> -->
             <input required type="number" name="zipCode" id="zipCode" placeholder="00000" maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-            <button type="submit">Submit</button>
+            <button type="submit">></button>
         </form>
         <div class="config">
             <p class="zip-head" id="zip-head">00000<i class="fas fa-sliders-h" alt="Configure Settings"></i></p>
@@ -31,10 +31,18 @@
     <main class="main-wrapper">
         <h2>Today</h2>
         <div class="main-content">
-            <div class="weather">
-                <p class="weather-temp"><span id="temp">--</span>&deg;</p>
-                <div class="line"></div>
+            <!-- Mobile Weather Widget -->
+            <div class="weather-mob">
+                <div class="card temperature">
+                    <p class="weather-temp"><span id="temp">--</span>&deg;</p>
+                </div>
+                <div class="card hi">i</div>
+                <div class="card lo">i</div>
+                <div class="card humid">i</div>
+                <div class="bumper"></div>
             </div>
+            <!-- Desktop Weather Widget -->
+            <div></div>
             <div class="wear">
                 <img src="img/wear-clear.png" alt="" id="wear-img" class="wear-img">
                 <div class="wear-blurb">
