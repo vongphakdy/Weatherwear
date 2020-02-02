@@ -29,6 +29,12 @@
     </div>
 
     <main class="main-wrapper">
+        <form id="zipForm" autocomplete="on">
+            <!-- TODO: CSS - Remove input number arrows -->
+            <label for="zipCode">Enter Zip Code:</label> <br>
+            <input required type="number" name="zipCode" id="zipCode" placeholder="00000" maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+            <button type="submit">Submit</button>
+        </form>
         <h2>Today</h2>
         <div class="main-content">
             <div class="weather">
