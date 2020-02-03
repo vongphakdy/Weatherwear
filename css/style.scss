@@ -50,19 +50,19 @@ a {
 .main-wrapper {
     width: calc(100% - 15px);
     margin: 0 0 35px 15px;
-    padding: 35px 25px 25px 25px;
+    padding: 25px;
     overflow: auto;
     background: $grayL;
     border-radius: 32px 0 0 32px;
-    > h2 {margin-bottom: 16px;}
+    > h2 {margin-bottom: 24px;}
 }
 .main-content {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     .wear {
         display: flex;
         flex-direction: column;
-        margin-bottom: 32px;
+        margin-bottom: 24px;
         .wear-img {
             width: 65%;
             margin: 0 auto 16px auto;
@@ -73,7 +73,7 @@ a {
         flex-wrap: nowrap;
         overflow-x: auto;
         border-radius: 16px 0 0 16px;
-        margin-right: -25px;
+        margin: 0 -25px 24px 0;
     }
     .card {
         flex: 0 0 auto;
@@ -85,13 +85,20 @@ a {
         background: white;
         border-radius: 16px;
         box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+        h5 {
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 4px;
+            color: $grayD;
+        }
     }
     .temperature {
         min-width: 75%;
-        padding: 0 15px;
+        padding: 15px 15px 15px 15px;
         .weather-temp {
-            font-size: 64px;
+            font-size: 52px;
             font-weight: 500;
+            line-height: 52px;
             color: $blue;
         }
     }

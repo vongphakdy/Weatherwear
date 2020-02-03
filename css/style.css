@@ -66,14 +66,14 @@ a:active, a:hover {
 .main-wrapper {
   width: calc(100% - 15px);
   margin: 0 0 35px 15px;
-  padding: 35px 25px 25px 25px;
+  padding: 25px;
   overflow: auto;
   background: #e8eaee;
   border-radius: 32px 0 0 32px;
 }
 
 .main-wrapper > h2 {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .main-content {
@@ -81,9 +81,9 @@ a:active, a:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .main-content .wear {
@@ -94,7 +94,7 @@ a:active, a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .main-content .wear .wear-img {
@@ -110,7 +110,7 @@ a:active, a:hover {
       flex-wrap: nowrap;
   overflow-x: auto;
   border-radius: 16px 0 0 16px;
-  margin-right: -25px;
+  margin: 0 -25px 24px 0;
 }
 
 .main-content .card {
@@ -128,14 +128,22 @@ a:active, a:hover {
           box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
 }
 
+.main-content .card h5 {
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #636363;
+}
+
 .main-content .temperature {
   min-width: 75%;
-  padding: 0 15px;
+  padding: 15px 15px 15px 15px;
 }
 
 .main-content .temperature .weather-temp {
-  font-size: 64px;
+  font-size: 52px;
   font-weight: 500;
+  line-height: 52px;
   color: #004CD3;
 }
 
