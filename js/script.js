@@ -1,4 +1,3 @@
-// const fetch = require("node-fetch");
 const zipForm = document.getElementById('zipForm');
 
 zipForm.addEventListener('submit', (e) => {
@@ -17,7 +16,8 @@ function apiCall() {
     let hi = document.getElementById('hi');
     let lo = document.getElementById('lo');
     let humid = document.getElementById('humid');
-    // console.log(apiUrl + zipCode + apiKey);
+    let wearImg = document.getElementById('wearImg');
+    let wearBlub = document.getElementById('wearBlurb');
 
     fetch(apiUrl + zipCode + apiKey)
         .then(response => {
@@ -31,11 +31,22 @@ function apiCall() {
             let dayTemp = toF(data.main.temp);
             let dayHi = toF(data.main.temp_max);
             let dayLo = toF(data.main.temp_min);
-
+            let weather = data.weather[0].main;
+            
+            // Alters Weather widget
             currTemp.innerHTML = dayTemp + "&deg;";
             hi.innerHTML = dayHi + '&deg;';
             lo.innerHTML = dayLo + '&deg;';
             humid.innerHTML = data.main.humidity + '&#x25;'
+            
+            //Alters Wear section
+            if(weather == 'Clouds' || weather == 'Fog') {
+                wearImg.src = '../img/wear-cloud.png';
+                wearBlurb.innerHTML = '<h1>"That one looks like a rabbit!"</h1><p>Cloudy skies up above. Go outside and see if you can make out any shapes &#x2014; but don&#x2019;t forget to put on a longsleeve!</p>';
+            } else if (weather == 'Clear') {
+                wearImg.src = '../img/wear-clear.png';
+                wearBlurb.innerHTML = '<h1>Suns Out. Guns out.</h1><p>It&#x2019;s clear out today. Throw on your favorite T-shirt and soak up the sun!</p>'
+            }
         })
         .catch(err => console.log(err));
 }
