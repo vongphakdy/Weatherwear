@@ -41,10 +41,10 @@ function apiCall() {
             
             //Alters Wear section
             if(weather == 'Clouds' || weather == 'Fog') {
-                wearImg.src = '../img/wear-cloud.png';
+                wearImg.src = '/img/wear-cloud.png';
                 wearBlurb.innerHTML = '<h1>"That one looks like a rabbit!"</h1><p>Cloudy skies up above. Go outside and see if you can make out any shapes &#x2014; but don&#x2019;t forget to put on a longsleeve!</p>';
             } else if (weather == 'Clear') {
-                wearImg.src = '../img/wear-clear.png';
+                wearImg.src = '/img/wear-clear.png';
                 wearBlurb.innerHTML = '<h1>Suns Out. Guns out.</h1><p>It&#x2019;s clear out today. Throw on your favorite T-shirt and soak up the sun!</p>'
             }
         })
