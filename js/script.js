@@ -14,6 +14,9 @@ function apiCall() {
     const apiKey = '&appid=65c2a04c4c37cb19ae57a213f9dce232';
     let zipCode = 'zip=' + document.getElementById('zipCode').value; 
     let currTemp = document.getElementById('temp');
+    let hi = document.getElementById('hi');
+    let lo = document.getElementById('lo');
+    let humid = document.getElementById('humid');
     // console.log(apiUrl + zipCode + apiKey);
 
     fetch(apiUrl + zipCode + apiKey)
@@ -25,11 +28,21 @@ function apiCall() {
               }
         })
         .then(data => {
-            let tempK = (data.main.temp).toFixed(0);
-            let tempC = (tempK - 273.15).toFixed(0);
-            let tempF = (((tempK - 273.15) * 1.8) + 32).toFixed(0);
+            let dayTemp = toF(data.main.temp);
+            let dayHi = toF(data.main.temp_max);
+            let dayLo = toF(data.main.temp_min);
 
-            currTemp.innerHTML = tempF;
+            currTemp.innerHTML = dayTemp + "&deg;";
+            hi.innerHTML = dayHi + '&deg;';
+            lo.innerHTML = dayLo + '&deg;';
+            humid.innerHTML = data.main.humidity + '&#x25;'
         })
         .catch(err => console.log(err));
+}
+
+function toF(tempX) {
+    return (((tempX - 273.15) * 1.8) + 32).toFixed(0);
+}
+function toC(tempX) {
+    return (tempX - 273.15).toFixed(0);
 }
