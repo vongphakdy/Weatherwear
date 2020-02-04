@@ -169,4 +169,10 @@ a:active, a:hover {
   line-height: 52px;
   color: white;
 }
+
+footer {
+  margin-bottom: 15px !important;
+  width: calc(100%-30px);
+  text-align: right;
+}
 /*# sourceMappingURL=style.css.map */
