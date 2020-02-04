@@ -1,13 +1,13 @@
 const settings = document.querySelector('.settings');
 const zipForm = document.getElementById('zipForm');
 const modal = document.querySelector('.modal');
-
+let ctr = 0;
+let clickCondition;
 window.onload = (e) => {
     modal.style.display = 'block';
 }
-
 settings.addEventListener('click', (e) => {
-    modal.style.display = 'block';
+    clickCondition = ctr++ % 2 === 0 ? modal.style.display='block' : modal.style.display='none';
 })
 
 // TODO:    form validation
