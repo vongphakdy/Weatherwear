@@ -43,8 +43,20 @@ a {
     padding: 15px 0;
     .logo {width: 52px;}
     nav {display: none;}
-    .settings {display: none;}
-    // form {display: none;}
+    .settings {
+        .zip-head {
+            display: inline-block;
+            font-weight: 700;
+        }
+        .fas {
+            margin-left: 6px;
+            color: $gray;
+        }
+        &:hover {
+            cursor: pointer;
+            .fas{color:$black;}
+        }
+    }
 }
 
 .main-wrapper {
@@ -121,15 +133,16 @@ a {
 }
 
 .modal {
+    display: none;
     position: absolute;
-    top: 75px;
-    left: 25px;
+    top: 70px;
+    right: 15px;
     padding: 15px;
     width: 280px;
     max-width: 280px;
     background: white;
     border-radius: 16px;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
     h2 {
         margin-bottom: 10px;
     }

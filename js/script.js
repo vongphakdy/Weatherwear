@@ -1,17 +1,31 @@
+const settings = document.querySelector('.settings');
 const zipForm = document.getElementById('zipForm');
+const modal = document.querySelector('.modal');
 
+window.onload = (e) => {
+    modal.style.display = 'block';
+}
+
+settings.addEventListener('click', (e) => {
+    modal.style.display = 'block';
+})
+
+// TODO:    form validation
+//          update fetch.catch to display err on screen !console.log
 zipForm.addEventListener('submit', (e) => {
-    // TODO:    close form window > display main page
-    //          form validation
-    //          update fetch.catch to display err on screen !console.log
+    let zipCode = document.getElementById('zipCode').value; 
+    let zipHead = document.getElementById('zipHead');
+
     e.preventDefault();
+    zipHead.innerText = zipCode;
     apiCall();
+    modal.style.display = 'none';
 })
 
 function apiCall() {
     const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?';
     const apiKey = '&appid=65c2a04c4c37cb19ae57a213f9dce232';
-    let zipCode = 'zip=' + document.getElementById('zipCode').value; 
+    zipCode = 'zip=' + document.getElementById('zipCode').value; 
 
     fetch(apiUrl + zipCode + apiKey)
         .then(response => {
@@ -30,6 +44,8 @@ function weatherOutput(data) {
     let dayHi = data.main.temp_max;
     let dayLo = data.main.temp_min;
     let weather = data.weather[0].main;
+    let radio = document.getElementById('radioF');
+
     let currTemp = document.getElementById('temp');
     let hi = document.getElementById('hi');
     let lo = document.getElementById('lo');
@@ -38,10 +54,17 @@ function weatherOutput(data) {
     let wearBlurb = document.getElementById('wearBlurb');
     
     // Alters Weather widget
-    currTemp.innerHTML = toF(dayTemp) + "&deg;";
-    hi.innerHTML = toF(dayHi) + '&deg;';
-    lo.innerHTML = toF(dayLo) + '&deg;';
-    humid.innerHTML = data.main.humidity + '&#x25;'
+    if (radio.checked) {
+        currTemp.innerHTML = toF(dayTemp) + "&deg;";
+        hi.innerHTML = toF(dayHi) + '&deg;';
+        lo.innerHTML = toF(dayLo) + '&deg;';
+        humid.innerHTML = data.main.humidity + '&#x25;'
+    } else {
+        currTemp.innerHTML = toC(dayTemp) + "&deg;";
+        hi.innerHTML = toC(dayHi) + '&deg;';
+        lo.innerHTML = toC(dayLo) + '&deg;';
+        humid.innerHTML = data.main.humidity + '&#x25;'
+    }
     
     //Alters Wear section
     if (weather == 'Thunderstorm' || weather == 'Squall') {

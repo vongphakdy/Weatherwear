@@ -59,8 +59,22 @@ a:active, a:hover {
   display: none;
 }
 
-.header .settings {
-  display: none;
+.header .settings .zip-head {
+  display: inline-block;
+  font-weight: 700;
+}
+
+.header .settings .fas {
+  margin-left: 6px;
+  color: #a1a1a1;
+}
+
+.header .settings:hover {
+  cursor: pointer;
+}
+
+.header .settings:hover .fas {
+  color: #363636;
 }
 
 .main-wrapper {
@@ -171,16 +185,17 @@ a:active, a:hover {
 }
 
 .modal {
+  display: none;
   position: absolute;
-  top: 75px;
-  left: 25px;
+  top: 70px;
+  right: 15px;
   padding: 15px;
   width: 280px;
   max-width: 280px;
   background: white;
   border-radius: 16px;
-  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
-          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 .modal h2 {
