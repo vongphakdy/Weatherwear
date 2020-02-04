@@ -17,14 +17,8 @@
             <a href="#">FAQ</a>
             <a href="#">Contact</a>
         </nav>
-        <form id="zipForm" autocomplete="on">
-            <!-- TODO: CSS - Remove input number arrows -->
-            <!-- <label for="zipCode">Enter Zip Code:</label> <br> -->
-            <input required type="number" name="zipCode" id="zipCode" placeholder="00000" maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-            <button type="submit">></button>
-        </form>
-        <div class="config">
-            <p class="zip-head" id="zip-head">00000<i class="fas fa-sliders-h" alt="Configure Settings"></i></p>
+        <div class="settings">
+            <p class="zip-head" id="zip-head">00000<i class="fas fa-sliders-h" alt="Settings"></i></p>
         </div>
     </div>
 
@@ -35,20 +29,20 @@
             <div class="weather-mob">
                 <div class="card temperature">
                     <h5>Current Temperature</h5>
-                    <p class="weather-temp" id="temp">N/A</p>
+                    <p class="weather-temp" id="temp">--</p>
                 </div>
                 <div class="card">
                     <h5>Hi</h5>
-                    <p class="card-output" id="hi">N/A</p>
+                    <p class="card-output" id="hi">--</p>
                 </div>
                 <div class="card">
                     <h5>Lo</h5>
-                    <p class="card-output" id="lo">N/A</p>
+                    <p class="card-output" id="lo">--</p>
                 </div>
                 <div class="card">
                     <h5>Humidity</h5>
                     <!-- &#x25; -->
-                    <p class="card-output" id="humid">N/A</p> 
+                    <p class="card-output" id="humid">--</p> 
                 </div>
                 <div class="bumper"></div>
             </div>
@@ -63,7 +57,31 @@
             </div>
         </div>
     </main>
-    
+
+    <div class="modal">
+        <form id="zipForm" autocomplete="on">
+            <!-- TODO: CSS - Remove input number arrows -->            
+            <h2>Settings</h2>
+            <div class="line"></div>
+            <label for="zipCode">Zip Code</label>
+            <input required type="number" name="zipCode" id="zipCode" placeholder="Enter your zip code" maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+            <label for="unit">Preffered Units</label>
+            <div class="units">
+                <label class="radio-container">
+                    <input type="radio" name="unit" id="radioF">
+                    Fahrenheit
+                    <span class="checked"></span>
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="unit" id="radioC">
+                    Celcius
+                    <span class="checked"></span>
+                </label>
+            </div>
+            <button type="submit">Go!</button>
+        </form>
+    </div>
+
     <footer class="wrapper-lg">
         <small class="copy">&copy; Weatherwear 2020</small>
     </footer>

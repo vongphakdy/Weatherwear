@@ -43,7 +43,7 @@ a {
     padding: 15px 0;
     .logo {width: 52px;}
     nav {display: none;}
-    .config {display: none;}
+    .settings {display: none;}
     // form {display: none;}
 }
 
@@ -116,6 +116,121 @@ a {
             font-weight: 500;
             line-height: 52px;
             color: white;
+        }
+    }
+}
+
+.modal {
+    position: absolute;
+    top: 75px;
+    left: 25px;
+    padding: 15px;
+    width: 280px;
+    max-width: 280px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+    h2 {
+        margin-bottom: 10px;
+    }
+    .line {
+        width: calc(100% + 30px);
+        margin: 0 -15px 15px -15px;
+        border-top: 2px solid $grayL;
+    }
+    label {
+        display: block;
+        color: $grayD;
+    }
+    input[type=number] {
+        display: block;
+        margin: 8px 0 15px 0;
+        padding: 8px;
+        width: 100%;
+        font-size: 14px;
+        background: $grayL;
+        color: $black;
+        border: none;
+        border-bottom: 2px solid $black;
+        &:focus {
+            outline: none;
+            border-color: $blue;
+        }
+        &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        -moz-appearance: textfield;
+    }
+    .units {
+        margin: 8px 0 15px 0;
+    }
+    .radio-container {
+        display: block;
+        position: relative;
+        font-weight: 400;
+        color: $black;
+        cursor: pointer;
+        user-select: none;
+        input[type=radio] {
+            margin-right: 12px;
+            opacity: 0;
+            cursor: pointer;
+            &:focus {
+                outline: none;
+            }
+            &:checked ~ .checked {
+                border-color: $blue;
+                &:after {
+                    display: block;
+                    background-color: $blue;
+                }
+            }
+        }
+        input#radioF {
+            margin-bottom: 14px;
+        }
+        .checked {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            border: 1px solid $gray;
+            border-radius: 50%;
+            &:after {
+                content: '';
+                display: none;
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background: $blue;
+            }
+        }
+        &:hover input ~ .checked:after {
+            display: block;
+            background: $gray;
+        }
+    }
+    button {
+        float: right;
+        padding: 8px 18px;
+        font-size: 14px;
+        font-weight: 500;
+        color: $blue;
+        background-color: white;
+        border: 2px solid $blue;
+        border-radius: 12px;
+        cursor: pointer;
+        &:hover {
+            color: white;
+            background-color: $blue;
+        }
+        &:focus {
+            outline: none;
         }
     }
 }

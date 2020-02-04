@@ -59,7 +59,7 @@ a:active, a:hover {
   display: none;
 }
 
-.header .config {
+.header .settings {
   display: none;
 }
 
@@ -168,6 +168,144 @@ a:active, a:hover {
   font-weight: 500;
   line-height: 52px;
   color: white;
+}
+
+.modal {
+  position: absolute;
+  top: 75px;
+  left: 25px;
+  padding: 15px;
+  width: 280px;
+  max-width: 280px;
+  background: white;
+  border-radius: 16px;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.modal h2 {
+  margin-bottom: 10px;
+}
+
+.modal .line {
+  width: calc(100% + 30px);
+  margin: 0 -15px 15px -15px;
+  border-top: 2px solid #e8eaee;
+}
+
+.modal label {
+  display: block;
+  color: #636363;
+}
+
+.modal input[type=number] {
+  display: block;
+  margin: 8px 0 15px 0;
+  padding: 8px;
+  width: 100%;
+  font-size: 14px;
+  background: #e8eaee;
+  color: #363636;
+  border: none;
+  border-bottom: 2px solid #363636;
+  -moz-appearance: textfield;
+}
+
+.modal input[type=number]:focus {
+  outline: none;
+  border-color: #004CD3;
+}
+
+.modal input[type=number]::-webkit-outer-spin-button, .modal input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.modal .units {
+  margin: 8px 0 15px 0;
+}
+
+.modal .radio-container {
+  display: block;
+  position: relative;
+  font-weight: 400;
+  color: #363636;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.modal .radio-container input[type=radio] {
+  margin-right: 12px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.modal .radio-container input[type=radio]:focus {
+  outline: none;
+}
+
+.modal .radio-container input[type=radio]:checked ~ .checked {
+  border-color: #004CD3;
+}
+
+.modal .radio-container input[type=radio]:checked ~ .checked:after {
+  display: block;
+  background-color: #004CD3;
+}
+
+.modal .radio-container input#radioF {
+  margin-bottom: 14px;
+}
+
+.modal .radio-container .checked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border: 1px solid #a1a1a1;
+  border-radius: 50%;
+}
+
+.modal .radio-container .checked:after {
+  content: '';
+  display: none;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #004CD3;
+}
+
+.modal .radio-container:hover input ~ .checked:after {
+  display: block;
+  background: #a1a1a1;
+}
+
+.modal button {
+  float: right;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #004CD3;
+  background-color: white;
+  border: 2px solid #004CD3;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  color: white;
+  background-color: #004CD3;
+}
+
+.modal button:focus {
+  outline: none;
 }
 
 footer {
