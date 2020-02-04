@@ -214,6 +214,7 @@ a:active, a:hover {
 .modal input[type=number]:focus {
   outline: none;
   border-color: #004CD3;
+  background: transparent;
 }
 
 .modal input[type=number]::-webkit-outer-spin-button, .modal input[type=number]::-webkit-inner-spin-button {
