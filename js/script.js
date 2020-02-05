@@ -4,7 +4,7 @@ const modal = document.querySelector('.modal');
 let ctr = 0;
 let clickCondition;
 window.onload = (e) => {
-    modal.style.display = 'block';
+    // modal.style.display = 'block';
 }
 settings.addEventListener('click', (e) => {
     clickCondition = ctr++ % 2 === 0 ? modal.style.display='block' : modal.style.display='none';
