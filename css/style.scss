@@ -43,6 +43,7 @@ a {
     padding: 15px 0;
     .logo {width: 52px;}
     nav {display: none;}
+    > h3 {user-select: none;}
     .settings {
         .zip-head {
             display: inline-block;
@@ -268,7 +269,7 @@ footer {
     }
     .main-content {
         display: grid;
-        grid-template-columns: auto 45%;
+        grid-template-columns: 1fr 1fr;
         grid-gap: 24px;
         align-items: center;
         margin-bottom: 24px;
@@ -293,6 +294,9 @@ footer {
         .card {
             margin-right: 0;
             min-width: 100%;
+        }
+        .wear {
+            max-width: 500px;
         }
     }
     .modal {display: none;}

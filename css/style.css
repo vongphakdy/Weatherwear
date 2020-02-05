@@ -59,6 +59,13 @@ a:active, a:hover {
   display: none;
 }
 
+.header > h3 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 .header .settings .zip-head {
   display: inline-block;
   font-weight: 700;
@@ -352,8 +359,8 @@ footer {
   .main-content {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto 45%;
-        grid-template-columns: auto 45%;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     grid-gap: 24px;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -389,6 +396,9 @@ footer {
   .main-content .card {
     margin-right: 0;
     min-width: 100%;
+  }
+  .main-content .wear {
+    max-width: 500px;
   }
   .modal {
     display: none;
