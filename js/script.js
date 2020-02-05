@@ -78,7 +78,7 @@ function weatherOutput(data) {
     } else if (weather == 'Snow') {
         wearImg.src = 'img/wear-snow.png';
         wearImg.alt = 'Snow coat';
-        wearBlurb.innerHTML = '<h1>Snow</h1><p>Wear snow coar</p>';
+        wearBlurb.innerHTML = '<h1>I</h1><p>Wear snow coar</p>';
     } else if (weather == 'Smoke' || weather == 'Haze' || weather == 'Dust' || weather == 'Sand' || weather == 'Ash') {
         wearImg.src = 'img/wear-smoke.png';
         wearImg.alt = 'Face mask';
@@ -86,7 +86,7 @@ function weatherOutput(data) {
     } else if (weather == 'Tornado') {
         wearImg.src = 'img/wear-tornado.png';
         wearImg.alt = 'Tornado work';
-        wearBlurb.innerHTML = '<h1>Tornado</h1><p>Contact local news</p>';
+        wearBlurb.innerHTML = '<h1>Tornado Warning!</h1><p>The outfit can wait! Check your local news stations for safety or evacuation updates.</p>';
     } else if (weather == 'Clear') {
         wearImg.src = 'img/wear-clear.png';
         wearImg.alt = 'T-shirt';

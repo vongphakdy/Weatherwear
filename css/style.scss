@@ -251,9 +251,11 @@ a {
 }
 
 footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 15px !important;
     width: calc(100%-30px);
-    text-align: right;
 }
 
 
