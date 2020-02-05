@@ -268,7 +268,7 @@ footer {
     }
     .main-content {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: auto 45%;
         grid-gap: 24px;
         align-items: center;
         .weather-mob {
@@ -292,11 +292,6 @@ footer {
         .card {
             margin-right: 0;
             min-width: 100%;
-        }
-        .wear {
-            .wear-img {
-                // max-width: 220px;
-            }
         }
     }
     .modal {display: none;}
