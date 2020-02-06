@@ -70,19 +70,19 @@ function weatherOutput(data) {
     if (weather == 'Thunderstorm' || weather == 'Squall') {
         wearImg.src = 'img/wear-thunder.png';
         wearImg.alt = 'Trench coat';
-        wearBlurb.innerHTML = '<h1>Thunder</h1><p>Wear trench coat</p>';
+        wearBlurb.innerHTML = '<h1>Thunderstorm</h1><p>Wear a trench coat!</p>';
     } else if (weather == 'Rain' || weather == 'Drizzle') {
         wearImg.src = 'img/wear-rain.png';
         wearImg.alt = 'Rain coat';
-        wearBlurb.innerHTML = '<h1>Rain</h1><p>Wear rain coat</p>';
+        wearBlurb.innerHTML = '<h1>It&#x2019;s raining, it&#x2019;s pouring.</h1><p>Or there&#x2019;s just a slight drizzle. Either way, you should come equipped with an umbrella.</p>';
     } else if (weather == 'Snow') {
         wearImg.src = 'img/wear-snow.png';
         wearImg.alt = 'Snow coat';
-        wearBlurb.innerHTML = '<h1>I</h1><p>Wear snow coar</p>';
+        wearBlurb.innerHTML = '<h1></h1><p>Wear snow coar</p>';
     } else if (weather == 'Smoke' || weather == 'Haze' || weather == 'Dust' || weather == 'Sand' || weather == 'Ash') {
         wearImg.src = 'img/wear-smoke.png';
         wearImg.alt = 'Face mask';
-        wearBlurb.innerHTML = '<h1>Smoke</h1><p>Face mask</p>';
+        wearBlurb.innerHTML = '<h1>Unsafe atmospheric conditions.</h1><p>The air is filled with smoke, haze, dust, sand, or ash. Wear a face mask.</p>';
     } else if (weather == 'Tornado') {
         wearImg.src = 'img/wear-tornado.png';
         wearImg.alt = 'Tornado work';
@@ -98,7 +98,7 @@ function weatherOutput(data) {
     }  else if(weather == 'Mist') {
         wearImg.src = 'img/wear-mist.png';
         wearImg.alt = 'Hoodie';
-        wearBlurb.innerHTML = '<h1>Mist</h1><p>Misty</p>';
+        wearBlurb.innerHTML = '<h1>I&#x2019;m going ghost!</h1><p>That was a Danny Phantom reference... it&#x2019;s actually just misty. Wear a hoodie!</p>';
     }
 }
 
