@@ -1,6 +1,6 @@
 # Weatherwear
-
 **API project that provides users with suggestions on how to dress based on current weather data.**
+![Weatherwear Branding](./img/readme.png)
 
 ## Technologies Used
 
@@ -10,7 +10,3 @@
 - SCSS
 - Adobe XD (UI + wire-frame)
 - Adobe Illustrator, Adobe Photoshop (logo design)
-
-## Branding
-
-![Weatherwear Branding](./img/readme.png)
