@@ -9,4 +9,5 @@
 - HTML
 - SCSS
 - Adobe XD (UI + wire-frame)
+- Adobe Illustrator, Adobe Photoshop (logo design)
 
