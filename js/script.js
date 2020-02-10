@@ -1,6 +1,13 @@
 const settings = document.querySelector('.settings');
 const zipForm = document.getElementById('zipForm');
 const modal = document.querySelector('.modal');
+let currTemp = document.getElementById('temp');
+let hi = document.getElementById('hi');
+let lo = document.getElementById('lo');
+let humid = document.getElementById('humid');
+let wearImg = document.getElementById('wearImg');
+let wearBlurb = document.getElementById('wearBlurb');
+
 let ctr = 0;
 let clickCondition;
 window.onload = (e) => {
@@ -10,8 +17,6 @@ settings.addEventListener('click', (e) => {
     clickCondition = ctr++ % 2 === 0 ? modal.style.display='block' : modal.style.display='none';
 })
 
-// TODO:    form validation
-//          update fetch.catch to display err on screen !console.log
 zipForm.addEventListener('submit', (e) => {
     let zipCode = document.getElementById('zipCode').value; 
     let zipHead = document.getElementById('zipHead');
@@ -36,7 +41,17 @@ function apiCall() {
               }
         })
         .then(data => weatherOutput(data))
-        .catch(err => console.log(err));
+        .catch(err => error(err));
+}
+
+function error() {
+    currTemp.innerHTML = '--';
+    hi.innerHTML = '--';
+    lo.innerHTML = '--';
+    humid.innerHTML = '--';
+    wearImg.src = 'img/wear-default.png';
+    wearImg.alt = 'Error';
+    wearBlurb.innerHTML = '<h1>Oops! Something went wrong.</h1><p>Double check your settings and try again.</p>';
 }
 
 function weatherOutput(data) {    
@@ -45,13 +60,6 @@ function weatherOutput(data) {
     let dayLo = data.main.temp_min;
     let weather = data.weather[0].main;
     let radio = document.getElementById('radioF');
-
-    let currTemp = document.getElementById('temp');
-    let hi = document.getElementById('hi');
-    let lo = document.getElementById('lo');
-    let humid = document.getElementById('humid');
-    let wearImg = document.getElementById('wearImg');
-    let wearBlurb = document.getElementById('wearBlurb');
     
     // Alters Weather widget
     if (radio.checked) {
