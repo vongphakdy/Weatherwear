@@ -51,7 +51,7 @@ function error() {
     humid.innerHTML = '--';
     wearImg.src = 'img/wear-default.png';
     wearImg.alt = 'Error';
-    wearBlurb.innerHTML = '<h1>Oops! Something went wrong.</h1><p>Double check your settings and try again.</p>';
+    wearBlurb.innerHTML = '<h1>Oops! Zip code not found.</h1><p>Double check your settings and try again.</p>';
 }
 
 function weatherOutput(data) {    
