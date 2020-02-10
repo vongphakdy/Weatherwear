@@ -11,6 +11,4 @@
 - Adobe XD (UI + wire-frame)
 - Adobe Illustrator, Adobe Photoshop (logo design)
 
-## Branding
-
 ![Weatherwear Branding](./img/readme.png)
